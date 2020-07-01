@@ -379,6 +379,65 @@ _ { musts }.must_raise TypeError
 
 * https://minitest.rubystyle.guide#global-expectations
 
+== Minitest/HaveAssertions
+
+|===
+| Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
+
+| Pending
+| Yes
+| No
+| 0.10
+| -
+|===
+
+This cop enforces that there is at least 1 assertion per test case.
+
+=== Examples
+
+==== CustomAssertions: [] (default)
+
+[source,ruby]
+----
+# bad
+class FooTest < Minitest::Test
+  def test_do_something
+    # There are no assertions
+    do_something
+  end
+end
+
+# good
+class FooTest < Minitest::Test
+  def test_do_something
+    # There is an assertion
+    assert_equal 42, do_something
+  end
+end
+----
+
+==== CustomAssertions: ['assert_something']
+
+[source,ruby]
+----
+# good
+class FooTest < Minitest::Test
+  def test_do_something
+    assert_something do_something
+  end
+end
+----
+
+=== Configurable attributes
+
+|===
+| Name | Default value | Configurable values
+
+| CustomAssertions
+| `[]`
+| Array
+|===
+
 == Minitest/RefuteEmpty
 
 |===

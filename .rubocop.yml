@@ -84,3 +84,9 @@ Metrics/ModuleLength:
 
 Performance/ChainArrayAllocation:
   Enabled: false
+
+Minitest/HaveAssertions:
+  CustomAssertions:
+    - 'assert_offense'
+    - 'assert_no_offenses'
+    - 'expect_correction'

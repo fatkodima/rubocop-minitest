@@ -77,6 +77,12 @@ Minitest/GlobalExpectations:
   Enabled: true
   VersionAdded: '0.7'
 
+Minitest/HaveAssertions:
+  Description: 'This cop enforces that there is at least 1 assertion per test case.'
+  Enabled: 'pending'
+  VersionAdded: '0.10'
+  CustomAssertions: []
+
 Minitest/RefuteEmpty:
   Description: 'This cop enforces to use `refute_empty` instead of using `refute(object.empty?)`.'
   StyleGuide: 'https://minitest.rubystyle.guide#refute-empty'
